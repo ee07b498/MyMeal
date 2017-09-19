@@ -2,7 +2,8 @@
 <html>
 	<head>MyMeal</head>
 	<body>
-		<form action="#" method="post">
+
+		<form action="Meal.php" method="post">
 		<!--read json to get recipes and list name as option-->
 			<select name="mealType">
 				<?php 
@@ -14,12 +15,12 @@
 				?>
 				
 				<?php foreach( $meals as $mealType ): ?>
-					<option value="<?php echo $mealType["name"]?>"><?php echo $mealType["name"]?></option>
+					<option id="MealChoice" value="<?php echo $mealType["name"]?>"><?php echo $mealType["name"]?></option>
 				<?php endforeach; ?>
 			</select>
-			<input type="submit" value="Done"/>
+			<input type="submit" name="Choose"/>
 		</form>
-
+		<h3>Fridge</h3>
 		<?php
 		
 		  	$csvFile = file('fridge.csv');
